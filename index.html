@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ashley My Love</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-family: Georgia, serif;
+      color: #354052;
+
+      background:
+        radial-gradient(circle at 15% 20%, #ffffff 0%, transparent 25%),
+        radial-gradient(circle at 85% 80%, #ffd6ec 0%, transparent 30%),
+        linear-gradient(
+          135deg,
+          #bdefff,
+          #d7eaff,
+          #f6d9f0,
+          #c8edff
+        );
+    }
+
+    /* =========================
+       GLOWING STARS
+    ========================= */
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+
+      width: 7px;
+      height: 7px;
+
+      background: white;
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 6px white,
+        0 0 14px #ffffff,
+        0 0 25px #ffbde3;
+
+      animation:
+        twinkle 2s ease-in-out infinite,
+        float 8s ease-in-out infinite;
+    }
+
+    /* Star cross effect */
+    .star::before,
+    .star::after {
+      content: "";
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      background: rgba(255,255,255,0.9);
+    }
+
+    .star::before {
+      width: 22px;
+      height: 2px;
+    }
+
+    .star::after {
+      width: 2px;
+      height: 22px;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.7);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.4);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        margin-top: 0;
+      }
+
+      50% {
+        margin-top: -15px;
+      }
+    }
+
+    /* =========================
+       POEM CARD
+    ========================= */
+
+    .poem {
+      position: relative;
+      z-index: 2;
+
+      width: 90%;
+      max-width: 700px;
+      max-height: 90vh;
+
+      overflow-y: auto;
+
+      padding: 45px 35px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.65);
+
+      border: 2px solid rgba(255, 255, 255, 0.8);
+
+      border-radius: 28px;
+
+      backdrop-filter: blur(12px);
+
+      box-shadow:
+        0 10px 40px rgba(126, 181, 220, 0.25),
+        0 0 35px rgba(255, 182, 220, 0.35);
+
+      animation: appear 1.8s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      font-size: 36px;
+      letter-spacing: 2px;
+
+      color: #4d6f91;
+
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.9),
+        0 0 15px rgba(255,174,216,0.5);
+    }
+
+    /* =========================
+       POEM
+    ========================= */
+
+    p {
+      margin: 0;
+
+      font-size: 18px;
+      line-height: 2;
+
+      color: #3f4d5f;
+
+      white-space: pre-line;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .poem {
+        width: 92%;
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .star {
+        width: 5px;
+        height: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✨ KUMIKINANG NA STARS -->
+  <div class="stars">
+
+    <span class="star" style="left: 5%; top: 15%; animation-delay: 0s;"></span>
+
+    <span class="star" style="left: 12%; top: 75%; animation-delay: .5s;"></span>
+
+    <span class="star" style="left: 20%; top: 35%; animation-delay: 1s;"></span>
+
+    <span class="star" style="left: 30%; top: 10%; animation-delay: 1.5s;"></span>
+
+    <span class="star" style="left: 70%; top: 12%; animation-delay: .7s;"></span>
+
+    <span class="star" style="left: 80%; top: 30%; animation-delay: 1.2s;"></span>
+
+    <span class="star" style="left: 90%; top: 18%; animation-delay: .3s;"></span>
+
+    <span class="star" style="left: 94%; top: 65%; animation-delay: 1.8s;"></span>
+
+    <span class="star" style="left: 85%; top: 85%; animation-delay: .9s;"></span>
+
+    <span class="star" style="left: 65%; top: 92%; animation-delay: 1.4s;"></span>
+
+    <span class="star" style="left: 25%; top: 90%; animation-delay: .2s;"></span>
+
+    <span class="star" style="left: 8%; top: 50%; animation-delay: 1.1s;"></span>
+
+  </div>
+
+
+  <!-- 💙 POEM -->
+  <div class="poem">
+    <p>
+I love you more than I can ever put into words. You are not just someone I love, you are someone I deeply value and want to keep in my life. I love you through the good days, the difficult days, the misunderstandings, and even the moments when things don't feel easy between us. My love for you isn't based on everything being perfect. I love you because you are you, and because somehow, you became someone my heart chooses every day. I may not always know the right words or the right way to show it, but please know that my love for you is real, deep, and sincere. I don't just want to love you when everything is okay I want to understand you, grow with you, and be there through whatever life brings us. You mean so much more to me, and I hope you never forgot
+how deeply I love youu
+
+    </p>
+
+  </div>
+
+</body>
+</html>
